@@ -15,8 +15,9 @@
         <div class="header-menu">
           <nuxt-link to="/" class="header-menu-link">Новости</nuxt-link>
           <nuxt-link to="search" class="header-menu-link">Поиск</nuxt-link>
-          <nuxt-link to="/" class="header-menu-link">Стримы</nuxt-link>
-          <nuxt-link to="/" class="header-menu-link">О сайте</nuxt-link>
+          <nuxt-link to="/streams" class="header-menu-link">Стримы</nuxt-link>
+          <nuxt-link to="/about" class="header-menu-link">О сайте</nuxt-link>
+          <nuxt-link to="/newplayer" class="header-menu-link">Добавить игрока</nuxt-link>
         </div>
         <nuxt-link to="/" class="header-login">Войти на сайт</nuxt-link>
       </div>

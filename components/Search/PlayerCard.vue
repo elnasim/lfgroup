@@ -34,15 +34,14 @@
     <div class="player-card-description">{{description}}</div>
 
     <div class="player-card-games">
-      <div class="player-card-game-img"><img src="~/static/games-img/wow.png" alt=""></div>
-      <div class="player-card-game-img"><img src="~/static/games-img/wow.png" alt=""></div>
-      <div class="player-card-game-img"><img src="~/static/games-img/wow.png" alt=""></div>
-      <div class="player-card-game-img"><img src="~/static/games-img/wow.png" alt=""></div>
+      <div class="player-card-game-img" v-for="game in getGames()" :key="game.id">
+        <img :src="getGameImg(game)" :alt=(game)>
+      </div>
     </div>
 
     <div class="player-card-links">
-      <a href="#" class="player-card-link" target="_blank"><img src="~/static/icons/vk.svg" alt=""></a>
-      <a href="#" class="player-card-link" target="_blank"><img src="~/static/icons/twitter.svg" alt=""></a>
+      <a :href="`${socialLinks.vk}`" class="player-card-link" target="_blank"><img src="~/static/icons/vk.svg" alt=""></a>
+      <a :href="`${socialLinks.twitter}`" class="player-card-link" target="_blank"><img src="~/static/icons/twitter.svg" alt=""></a>
     </div>
 
   </div>
@@ -57,11 +56,17 @@
       "playtime",
       "description",
       "games",
-      "sociallinks"
+      "socialLinks"
     ],
     methods: {
       getABC() {
         return this.nickname.slice(0, 1);
+      },
+      getGames() {
+        return this.games;
+      },
+      getGameImg(game) {
+        return require(`@/static/games-img/${game}.png`)
       }
     }
   };

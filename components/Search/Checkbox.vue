@@ -1,11 +1,14 @@
 <template>
-  <label><input class="chbox" type="checkbox"><span class="custom-chbox"><span
-          class="custom-chbox-box"></span></span></label>
+  <label>
+    <input class="chbox" type="checkbox">
+    <span class="custom-chbox"><span class="custom-chbox-box"></span></span>
+  </label>
 </template>
 
 <script>
   export default {
-    name: "Checkbox"
+    name: "Checkbox",
+    props: ['value']
   }
 </script>
 

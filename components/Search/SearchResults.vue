@@ -2,14 +2,14 @@
   <div class="search-results">
     <div class="search-results-players">
       <PlayerCard
-              v-for="player in getPlayer"
+              v-for="player in getPlayers"
               :key="player.nickname"
               :nickname="player.nickname"
               :lfgstatus="player.lfgstatus"
               :playtime="player.playtime"
               :description="player.description"
               :games="player.games"
-              :sociallinks="player.sociallinks"
+              :socialLinks="player.socialLinks"
       />
     </div>
     <div class="pagination">
@@ -22,12 +22,17 @@
 
 <script>
   import PlayerCard from '~/components/Search/Playercard';
+  import {mapGetters} from 'vuex';
 
   export default {
     name: "SearchResults",
     components: {
       PlayerCard
     },
-    computed: {}
+    computed: {
+      ...mapGetters([
+        'getPlayers',
+      ])
+    }
   }
 </script>

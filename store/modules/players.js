@@ -6,10 +6,7 @@ export default {
       "playtime": "18:00 - 24:00",
       "avatar": null,
       "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum nostrum blanditiis voluptate non, accusantium, ipsa repellat quae vitae dolor expedita quibusdam obcaecati nulla consequatur? Molestiae cupiditate delectus voluptates in enim molestias veritatis recusandae vero ipsum odio quos ipsam, quidem sunt? Deleniti consequatur itaque iusto eligendi omnis sequi ullam eveniet laudantium. ",
-      "games": {
-        "wow": true,
-        "pubg": false
-      },
+      "games": ['wow', 'pubg', 'lol', 'csgo'],
       "socialLinks": {
         "vk": "id0",
         "twitter": "idTwitter"
@@ -21,10 +18,7 @@ export default {
         "playtime": "Любое время",
         "avatar": null,
         "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum nostrum blanditiis voluptate non, accusantium, ipsa repellat quae vitae dolor expedita quibu",
-        "games": {
-          "wow": true,
-          "pubg": false
-        },
+        "games": ['wow', 'pubg'],
         "socialLinks": {
           "vk": "id0",
           "twitter": "idTwitter"
@@ -36,10 +30,7 @@ export default {
         "playtime": "Любое время",
         "avatar": null,
         "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsum nostrum blanditiis voluptate non, accusantium, ipsa repellat quae vitae dolor expedita quibu",
-        "games": {
-          "wow": true,
-          "pubg": false
-        },
+        "games": ['wow', 'pubg'],
         "socialLinks": {
           "vk": "id0",
           "twitter": "idTwitter"
@@ -47,10 +38,26 @@ export default {
       }
     ]
   },
-  mutations: {},
+  mutations: {
+    newPlayer(state, payload) {
+      state.players.push({
+        'nickname': payload.nickname,
+        lfgstatus: payload.lfgstatus,
+        playtime: payload.playtime,
+        avatar: null,
+        description: payload.description,
+        games: ['wow', 'pubg', 'lol', 'csgo'],
+        socialLinks: {
+          "vk": payload.socialLinks.vk,
+          "twitter": payload.socialLinks.twitter
+        }
+      })
+    }
+  },
   getters: {
-    getPlayerInfo: state => {
+    getPlayers(state) {
       return state.players;
     }
-  }
+  },
+  actions: {}
 }
