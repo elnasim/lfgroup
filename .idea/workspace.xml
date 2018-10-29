@@ -20,14 +20,16 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="4" />
+          <entry key="js" value="5" />
+          <entry key="json" value="1" />
           <entry key="scss" value="3" />
           <entry key="vue" value="17" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="4" />
+          <entry key="JSON" value="1" />
+          <entry key="JavaScript" value="5" />
           <entry key="SCSS" value="3" />
           <entry key="Vue.js" value="17" />
         </counts>
@@ -40,12 +42,14 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="js" value="357" />
+          <entry key="json" value="2" />
           <entry key="scss" value="931" />
           <entry key="vue" value="2321" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="JSON" value="2" />
           <entry key="JavaScript" value="357" />
           <entry key="SCSS" value="931" />
           <entry key="Vue.js" value="2321" />
@@ -55,14 +59,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/newplayer/index.vue">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="446">
-              <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+            <state relative-caret-position="770">
+              <caret line="57" column="91" lean-forward="true" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="91" />
               <folding>
                 <element signature="e#1616#1672#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/package.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="351">
+              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -126,6 +139,7 @@
         <option value="$PROJECT_DIR$/components/Search/Checkbox.vue" />
         <option value="$PROJECT_DIR$/assets/styles/main.scss" />
         <option value="$PROJECT_DIR$/pages/newplayer/index.vue" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -378,13 +392,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/nuxt.config.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/newplayer/index.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="446">
-          <caret line="45" column="18" selection-start-line="45" selection-start-column="18" selection-end-line="45" selection-end-column="18" />
+        <state relative-caret-position="770">
+          <caret line="57" column="91" lean-forward="true" selection-start-line="57" selection-start-column="91" selection-end-line="57" selection-end-column="91" />
           <folding>
             <element signature="e#1616#1672#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="351">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
         </state>
       </provider>
     </entry>
