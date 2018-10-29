@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  import PlayerCard from '~/components/Search/Playercard';
+  import PlayerCard from '~/components/Search/PlayerCard';
   import {mapGetters} from 'vuex';
 
   export default {
