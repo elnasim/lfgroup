@@ -104,13 +104,15 @@
     methods: {
       newPlayer() {
         let playtime = this.playtimeFromHour + ':' + this.playtimeFromMin + ' - ' + this.playtimeToHour + ':' + this.playtimeToMin;
-        this.$store.commit('newPlayer', {
+        let litera = this.nickname.slice(-1);
+        this.$store.dispatch('newPlayer', {
           nickname: this.nickname,
+          litera: litera,
           lfgstatus: true,
           playtime: playtime,
           avatar: null,
           description: this.description,
-          games: ['wow', 'pubg', 'lol', 'csgo'],
+          games: this.games,
           socialLinks: {
             vk: this.socialLinks.vk,
             twitter: this.socialLinks.twitter

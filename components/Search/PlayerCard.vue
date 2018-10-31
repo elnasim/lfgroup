@@ -24,7 +24,7 @@
 
       <div class="player-card-head-column">
         <div class="player-card-nick-wrapper">
-          <div class="player-card-img">{{getABC()}}</div>
+          <div class="player-card-img">{{litera}}</div>
           <div class="player-card-nickname">{{nickname}}</div>
         </div>
       </div>
@@ -34,7 +34,7 @@
     <div class="player-card-description">{{description}}</div>
 
     <div class="player-card-games">
-      <div class="player-card-game-img" v-for="game in getGames()" :key="game.id">
+      <div class="player-card-game-img" v-for="game in games" :key="game.id">
         <img :src="getGameImg(game)" :alt=(game)>
       </div>
     </div>
@@ -56,15 +56,10 @@
       "playtime",
       "description",
       "games",
-      "socialLinks"
+      "socialLinks",
+      "litera"
     ],
     methods: {
-      getABC() {
-        return this.nickname.slice(0, 1);
-      },
-      getGames() {
-        return this.games;
-      },
       getGameImg(game) {
         return require(`@/static/games-img/${game}.png`)
       }

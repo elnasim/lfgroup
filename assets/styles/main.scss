@@ -99,11 +99,23 @@ a {
   text-transform: uppercase;
   margin-right: 20px;
   transition: .25s;
-
+  position: relative;
   &:hover {
     color: $accent
   }
+}
 
+.nuxt-link-exact-active {
+  color: $accent;
+  &::after {
+    content: '';
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $accent;
+    height: 2px;
+    position: absolute;
+  }
 }
 
 .header-login {
