@@ -1,5 +1,6 @@
 import * as firebase from 'firebase/app';
 import 'firebase/firestore';
+import 'firebase/database';
 
 const config = {
   apiKey: "AIzaSyBeCLRNe4mciaoYZ3MzNrV9kA71eiiJDtw",
@@ -9,8 +10,6 @@ const config = {
   storageBucket: "lfgroup-54138.appspot.com",
   messagingSenderId: "256951065917"
 };
-
-//!firebase.apps.length ? firebase.initializeApp(config) : firebase.app();
 
 if (!firebase.apps.length) {
   firebase.initializeApp(config)
@@ -22,4 +21,4 @@ firebase.firestore().settings({
   timestampsInSnapshots: true
 });
 
-export default firebase.firestore();
+export default firebase.database();

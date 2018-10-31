@@ -19,48 +19,27 @@ export default {
   },
 
   mutations: {
-    NEW_PLAYER(state, payload) {
-      state.players.push({
-        nickname: payload.nickname,
-        lfgstatus: payload.lfgstatus,
-        playtime: payload.playtime,
-        avatar: null,
-        description: payload.description,
-        games: ['wow', 'pubg', 'lol', 'csgo'],
-        socialLinks: {
-          vk: payload.socialLinks.vk,
-          twitter: payload.socialLinks.twitter
-        }
-      })
-    },
-
-    CLEAR_PLAYERS(state, payload) {
-      state.players = []
-    },
-
     GET_PLAYERS(state, payload) {
-      state.players.push(payload);
+      state.players = payload;
     }
   },
 
   actions: {
     getPlayers({commit}) {
       commit('CLEAR_PLAYERS');
-      fb.collection('players').get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          commit('GET_PLAYERS', doc.data())
-        });
+      fb.ref('players').once('value').then(function (snapshot) {
+        commit('GET_PLAYERS', snapshot.val())
       });
     },
 
     newPlayer({commit}, payload) {
-      fb.collection('players').add({
+      fb.ref('players').push({
         nickname: payload.nickname,
         litera: payload.litera,
         lfgstatus: true,
         playtime: payload.playtime,
         description: payload.description,
-        games: ['wow', 'pubg', 'lol', 'csgo'],
+        games: payload.games,
         socialLinks: {
           vk: payload.socialLinks.vk,
           twitter: payload.socialLinks.twitter

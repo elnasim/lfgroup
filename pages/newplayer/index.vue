@@ -104,7 +104,8 @@
     methods: {
       newPlayer() {
         let playtime = this.playtimeFromHour + ':' + this.playtimeFromMin + ' - ' + this.playtimeToHour + ':' + this.playtimeToMin;
-        let litera = this.nickname.slice(-1);
+        let litera = this.nickname.slice(0, 1);
+        console.log('-->', litera);
         this.$store.dispatch('newPlayer', {
           nickname: this.nickname,
           litera: litera,
