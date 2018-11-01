@@ -6,7 +6,7 @@ export default {
     filter: {
       games: ['World of Warcraft', 'League of Legends', 'PUBG', 'CS:GO']
     },
-    isLoading: false,
+    isLoading: true,
   },
 
   getters: {
@@ -15,20 +15,27 @@ export default {
     },
     getGames(state) {
       return state.filter.games;
+    },
+    isLoading(state) {
+      return state.isLoading;
     }
   },
 
   mutations: {
     GET_PLAYERS(state, payload) {
       state.players = payload;
+    },
+    CHANGE_IS_LOADING(state, payload) {
+      state.isLoading = payload;
     }
   },
 
   actions: {
     getPlayers({commit}) {
-      commit('CLEAR_PLAYERS');
+      commit('CHANGE_IS_LOADING', true);
       fb.ref('players').once('value').then(function (snapshot) {
-        commit('GET_PLAYERS', snapshot.val())
+        commit('GET_PLAYERS', snapshot.val());
+        commit('CHANGE_IS_LOADING', false)
       });
     },
 

@@ -1,6 +1,7 @@
 <template>
   <div class="search-results">
-    <div class="search-results-players">
+    <div class="search-results-loading" v-if="isLoading">Loading...</div>
+    <div class="search-results-players" v-if="!isLoading">
       <PlayerCard
               v-for="(player, index) in getPlayers"
               :key="index"
@@ -14,9 +15,9 @@
       />
     </div>
     <!--<div class="pagination">-->
-      <!--<a href="#" class="pagination-item active">1</a>-->
-      <!--<a href="#" class="pagination-item">2</a>-->
-      <!--<a href="#" class="pagination-item">3</a>-->
+    <!--<a href="#" class="pagination-item active">1</a>-->
+    <!--<a href="#" class="pagination-item">2</a>-->
+    <!--<a href="#" class="pagination-item">3</a>-->
     <!--</div>-->
   </div>
 </template>
@@ -31,7 +32,7 @@
       PlayerCard
     },
     computed: {
-      ...mapGetters(['getPlayers'])
+      ...mapGetters(['getPlayers', 'isLoading'])
     },
     beforeMount() {
       this.$store.dispatch('getPlayers');
